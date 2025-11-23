@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Чистая Установка — Гайд по безопасной установке Windows</title>
+<style>
+  :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+  body{margin:0;background:#f4f6f8;color:#111;line-height:1.5}
+  header{background:#0b63c6;color:#fff;padding:28px 16px}
+  .container{max-width:900px;margin:20px auto;padding:0 16px}
+  h1{margin:0;font-size:1.6rem}
+  .lead{opacity:.95;margin-top:6px}
+  section{background:#fff;padding:18px;border-radius:8px;box-shadow:0 1px 4px rgba(10,10,10,.06);margin-bottom:14px}
+  h2{margin-top:0;font-size:1.1rem;color:#0b63c6}
+  ul{padding-left:1.1rem}
+  pre{background:#f0f3f6;padding:12px;border-radius:6px;overflow:auto}
+  .tip{background:#fffbe6;border-left:4px solid #ffd24d;padding:10px;border-radius:6px}
+  footer{font-size:.9rem;color:#666;text-align:center;padding:18px 0}
+  .btn{display:inline-block;padding:8px 12px;background:#0b63c6;color:#fff;border-radius:6px;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1>Чистая Установка</h1>
+    <div class="lead">Пошаговый и безопасный гайд по установке Windows. Проверяйте официальные ресурсы и делайте резервные копии.</div>
+  </div>
+</header>
+<main class="container">
+  <section>
+    <h2>1. Подготовка</h2>
+    <ul>
+      <li>Резервное копирование важных данных (внешний диск, облако).</li>
+      <li>Проверка совместимости: версия Windows, требования к TPM/UEFI, объём диска и RAM.</li>
+      <li>Скачивайте установочный образ только с официального сайта Microsoft.</li>
+      <li>Подготовьте пустую USB-флешку 8 GB+ (все данные на ней будут удалены).</li>
+    </ul>
+  </section>
+  <section>
+    <h2>2. Создание загрузочной флешки</h2>
+    <ul>
+      <li>Рекомендуемые инструменты: официальный Media Creation Tool (Windows) или balenaEtcher (кроссплатформенный).</li>
+      <li>Проверьте контрольную сумму ISO (если доступна) для предотвращения повреждённого/подменённого образа.</li>
+      <li>Инструкция: записать ISO на флешку, сделать её загрузочной (ruled by chosen tool).</li>
+    </ul>
+    <div class="tip"><strong>Безопасность:</strong> не загружайте ISO с неизвестных сайтов — риск малвари и бэкдоров.</div>
+  </section>
+  <section>
+    <h2>3. BIOS / UEFI</h2>
+    <ul>
+      <li>Войдите в BIOS/UEFI (обычно F2, Del, Esc — зависит от производителя).</li>
+      <li>Убедитесь, что режим загрузки — UEFI (рекомендуется) или Legacy по необходимости.</li>
+      <li>Отключите Secure Boot только если это явно требуется для старого оборудования; по возможности оставьте включённым.</li>
+      <li>Настройте загрузку с USB в приоритете.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>4. Установка Windows</h2>
+    <ol>
+      <li>Загрузитесь с флешки и следуйте мастеру установки.</li>
+      <li>При выборе диска: при чистой установке можно удалить старые разделы (внимательно) и создать новые.</li>
+      <li>Если у вас SSD — убедитесь, что в настройках включён AHCI и что диск использует GPT (для UEFI).</li>
+      <li>После завершения — установите драйверы с сайта производителя и обновления через Windows Update.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>5. Постинсталляционные шаги и безопасность</h2>
+    <ul>
+      <li>Включите BitLocker (если доступен) и создайте резервную копию ключа восстановления.</li>
+    </ul>
